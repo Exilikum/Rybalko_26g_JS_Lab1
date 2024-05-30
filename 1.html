@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+    console.log("Задача 1: Знайти остачу від ділення першої цифри на останню у заданому 5-ти цифровому натуральному числі.");
+    const number = 42349;
+    
+    console.log("Введені дані: " + number);
+    function findRemainder(number)
+    {
+        const numberStr = number.toString();
+        if (numberStr.length !==5) {
+        console.log("Число має бути 5-значним");
+        }
+        const firstDigit = parseInt(numberStr[0]);
+        const lastDigit = parseInt(numberStr[numberStr.length - 1]);
+        return firstDigit % lastDigit;
+    }
+const result = findRemainder(number);
+console.log("Результат виконання скрипта: " + result);
+    
+</script>
+</body>
+</html>

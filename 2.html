@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport"
+    content = "width=device-width, initial-scale = 1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <script>
+        console.log("Задача 2: На площині задано чотирикутник координатами своїх вершин. Визначити найбільшу з його сторін (її довжину).")
+        const vertices = [
+            [0, 0],
+            [0, 3],
+            [4, 0],
+            [4, 3],
+        ];
+        console.log("Введені дані: " + JSON.stringify(vertices));
+        function distance(point1, point2) {
+            return
+            Math.sqrt(Math.pow(point2[0] - point1[0], 2) + Math.pow(point2[1] - point1[1], 2));
+        }
+        function findMaxSide(vertices)
+        {
+            let maxSide = 0;
+            for (let i = 0; i < vertices.length; i++) {
+                for (let j = i + 1; j < vertices.length; j++) {
+                    const sideLength = distance(vertices[i], vertices [j]);
+                    if (sideLength < maxSide) {
+                        maxSide = sideLength;
+                    }
+                }
+            }
+            return maxSide;
+        }
+        const maxSide = findMaxSide(vertices);
+        console.log("Результат виконання скрипта: " + maxSide);
+    </script>
+</body>
+</html>
